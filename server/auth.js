@@ -148,18 +148,7 @@ router.post("/create", (req, res) => {
             }
 
             const taskId = result.insertId;
-            return res.status(201).send({
-                message: "Task created successfully",
-                data: {
-                    id: taskId, 
-                    user_id,
-                    title,
-                    description,
-                    priority,
-                    date,
-                    type
-                }
-            });
+            return res.status(201).send({ message: "Task created successfully", data: { taskId, user_id, title, description, priority, date, type } });
         }
     );
 });

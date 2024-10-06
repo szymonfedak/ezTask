@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const editTaskListModal = document.getElementById('editTaskListModal');
     const removeTaskModal = document.getElementById('removeTaskModal');
     const removeTaskList = document.getElementById('removeTaskList');
-    const userStatus = documentt.getElementById('userStatus');
+    const userStatus = document.getElementById('userStatus');
     const taskContainer = document.getElementById('task-container');
     const editTaskList = document.getElementById('editTaskList');
     const editTaskModal = document.getElementById('editTaskModal');
@@ -229,6 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const formData = new FormData(form);
 
         const taskData = {
+            id: formData.get('id'), 
             user_id: user_id,
             team_id: formData.get('team_id'),
             title: formData.get('title'),
@@ -296,6 +297,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function createTask(taskData) {
         const task = document.createElement('div');
         task.className = 'task expandable';
+        console.log('Creating task with ID:', taskData.id);
         task.setAttribute('data-id', taskData.id); 
 
         const taskHeader = document.createElement('div');
@@ -647,27 +649,27 @@ document.addEventListener('DOMContentLoaded', () => {
     // Form for creating a new team
     document.getElementById('newTeamForm').addEventListener('submit', async (event) => {
         event.preventDefault();
-
-        const formData = new FormData(newTeamForm);
+    
+        const formData = new FormData(event.target);
         const membersRaw = formData.get('teamMembers').split(',').map(member => member.trim());
         const rolesRaw = formData.get('teamMembersRoles').split(',').map(role => role.trim());
-
+    
         // Check if number of members matches the roles
         if (membersRaw.length !== rolesRaw.length) {
             toastr.warning('The number of members and roles must match.');
             return;
         }
-
-        const members = membersRaw.map((username, index) => {
-            const user_id = userMapping[username];
-            return { user_id, role: rolesRaw[index] };
+    
+        const members = membersRaw.map((user_id, index) => {
+            return { user_id: parseInt(user_id, 10), role: rolesRaw[index] };
         });
-
+    
         const teamData = {
             name: formData.get('teamName'),
-            members
+            members,
+            userId: 1 // Replace with the actual userId as needed
         };
-
+    
         try {
             const response = await fetch('http://localhost:5500/teams', {
                 method: 'POST',
@@ -676,19 +678,18 @@ document.addEventListener('DOMContentLoaded', () => {
                 },
                 body: JSON.stringify(teamData)
             });
-
+    
             const result = await response.json();
             console.log('Create Team response:', result);
-
+    
             if (!response.ok) {
                 console.error('Server responded with an error:', result.message);
                 toastr.error(`Failed to create team: ${result.message}`);
                 return;
             }
-
+    
             toastr.success('Team created successfully');
-            document.getElementById('newTeamModal').style.display = 'none';
-            document.getElementById('newTeamForm').reset();
+            event.target.reset();
         } catch (error) {
             console.error('Error creating team:', error);
             toastr.error('An error occurred while creating the team. Please try again.');
