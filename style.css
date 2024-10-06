@@ -1,0 +1,1001 @@
+#dropBtnTask {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f3f7fe;
+    color: #3b82f6;
+    border: none;
+    border-radius: 8px;
+    width: 100px;
+    height: 45px;
+    transition: .3s;
+    text-align: center;
+    border: 1px solid blue;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    z-index: 1;
+}
+
+
+#dropBtnTask:hover {
+    background-color: #3b82f6;
+    box-shadow: 0 0 0 5px #3b83f65f;
+    color: #fff;
+
+}
+
+#dropBtnTeam {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f3f7fe;
+    color: #3b82f6;
+    border: none;
+    border-radius: 8px;
+    width: 100px;
+    height: 45px;
+    transition: .3s;
+    border: 1px solid blue;
+    text-align: center;
+}
+
+#dropBtnTeam:hover {
+    background-color: #3b82f6;
+    box-shadow: 0 0 0 5px #3b83f65f;
+    color: #fff;
+
+}
+
+.dropdownTask {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdownTeam {
+    position: relative;
+    display: inline-block;
+}
+
+#login {
+    position: relative;
+    display: inline-block;
+}
+
+.loginBtnMenu {
+    float: right;
+}
+
+.registerBtnMenu {
+    float: right;
+}
+
+button {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f3f7fe;
+    color: #3b82f6;
+    border: none;
+    border-radius: 8px;
+    width: 100px;
+    height: 45px;
+    transition: .3s;
+    text-align: center;
+    border: 1px solid blue;
+}
+
+.taskEditBtn {
+    margin: 5px;
+    text-align: center;
+}
+
+.taskDeleteBtn {
+    margin: 5px;
+    text-align: center;
+}
+
+#ToDoBtn {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+
+#showTeamBtn {
+    margin-top: 4px;
+    margin-bottom: 4px;
+}
+
+button:hover {
+    background-color: #2b96dc;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: 0px; 
+    top: 0;
+    transform: translateX(-100%); 
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content-login {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    top: 10px;
+    transform: translateX(-100%);
+}
+
+.dropdown-content-login a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content-login a:not(#userStatus):hover {
+    background-color: #ddd;
+}
+
+.dropdownTask:hover .dropdown-content {
+    display: block;
+}
+
+.dropdownTeam:hover .dropdown-content {
+    display: block;
+}
+
+.dropdownLogin:hover .dropdown-content-login {
+    display: block;
+}
+
+.dropdownTask:hover .dropBtnTask {
+    background-color: #2b96dc;
+}
+
+.dropdownTeam:hover .dropBtnTeam {
+    background-color: #2b96dc;
+}
+
+.dropdownLogin:hover .dropBtnLogin {
+    background-color: #2b96dc;
+}
+
+#loginIcon {
+    height: 50px;
+    width: 50px;
+}
+
+.dropdownLogin {
+    float: right;
+}
+
+#userStatus {
+    color: black;
+    display: flex;
+    align-items: center;
+    cursor: default;
+}
+
+#showteamBtn {
+    position: relative;
+    display: inline-block
+}
+
+#topNav {
+    background-color: white;
+    height: 100px;
+    width: auto;
+}
+
+#task-container {
+    width: auto;
+    height: auto;
+}
+
+.task {
+    width: 150px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    position: absolute;
+    cursor: move;
+}
+
+.deleteButton {
+    background-color: #04AA6D;
+    color: white;
+    font-size: 15px;
+    border: none;
+    height: 25px;
+    width: 25px;
+    text-align: center;
+    position: relative;
+    float: right;
+    z-index: 1;
+}
+
+.sideMenu {
+    height: auto;
+    padding: 10px;
+    width: 100px;
+    right: 0;
+    position: fixed;
+}
+
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+    position: relative;
+    height: 100vh;
+}
+
+
+.task {
+    position: absolute;
+    cursor: move;
+    background-color: white;
+}
+
+.expandable {
+    width: 300px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    z-index: 1;
+}
+
+.expandable-header {
+    padding: 15px;
+    background-color: white;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    cursor: pointer;
+}
+
+.expandable-content {
+    max-height: 0;
+    overflow: hidden;
+    background-color: white;
+    padding: 0 15px;
+    transition: max-height 0.3s ease-out, padding 0.3s ease-out;
+}
+
+.expandable.open .expandable-content {
+    max-height: 500px;
+    padding: 15px;
+}
+
+#taskModal,
+#editTaskListModal,
+#editTaskModal,
+#removeTaskModal,
+#newTeamModal,
+#editTeamListModal,
+#editTeamModal,
+#removeTeamModal,
+#showTeamModal,
+#ToDoModal,
+#teamTaskModal,
+#editTeamTaskListModal,
+#removeTeamTaskModal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 40%;
+    height: auto;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+
+.checkbox-wrapper-21 {
+    position: relative;
+    
+}
+
+.checkbox-wrapper-21 .control {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 6px;
+}
+
+.checkbox-wrapper-21 .control input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+}
+
+.checkbox-wrapper-21 .control__indicator {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background: #e6e6e6;
+    z-index: 2;
+}
+
+.checkbox-wrapper-21 .control:hover input ~ .control__indicator,
+.checkbox-wrapper-21 .control input:focus ~ .control__indicator {
+    background: #ccc;
+}
+
+.checkbox-wrapper-21 .control input:checked ~ .control__indicator {
+    background: #2aa1c0;
+}
+
+.checkbox-wrapper-21 .control:hover input:not([disabled]):checked ~ .control__indicator,
+.checkbox-wrapper-21 .control input:checked:focus ~ .control__indicator {
+    background: #0e647d;
+}
+
+.checkbox-wrapper-21 .control input:disabled ~ .control__indicator {
+    background: #e6e6e6;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.checkbox-wrapper-21 .control__indicator:after {
+    content: '';
+    position: absolute;
+    display: none;
+}
+
+.checkbox-wrapper-21 .control input:checked ~ .control__indicator:after {
+    display: block;
+}
+
+.checkbox-wrapper-21 .control--checkbox .control__indicator:after {
+    left: 8px;
+    top: 4px;
+    width: 3px;
+    height: 8px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    
+}
+
+.checkbox-wrapper-21 .control--checkbox input:disabled ~ .control__indicator:after {
+    border-color: #7b7b7b;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+#taskForm input {
+    border: 2px solid transparent;
+    width: 15em;
+    height: 2.5em;
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    transition: all 0.5s;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+#taskForm input:hover,
+input:focus {
+    border: 2px solid #4A9DEC;
+    box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+    background-color: white;
+}
+
+#taskForm select {
+    border: 2px solid transparent;
+    width: 16.2em;
+    height: 2.5em;
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    transition: all 0.5s;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+#taskForm select:hover,
+select:focus {
+    border: 2px solid #4A9DEC;
+    box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+    background-color: white;
+}
+
+h2 {
+    text-align: center;
+    background: linear-gradient(to bottom left, #367cf5, #63e5f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; 
+}
+
+h3 {
+    text-align: center;
+    background: linear-gradient(to bottom left, #367cf5, #63e5f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; 
+}
+
+#editTeamLabel {
+    text-align: center;
+    background: linear-gradient(to bottom left, #367cf5, #63e5f1);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text; 
+    font-weight: bold;
+}
+
+#editTaskList{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    
+}
+
+#editTeamTaskList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#removeTaskList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#editTeamList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.member-item {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f3f7fe;
+    color: #3b82f6;
+    border: none;
+    border-radius: 8px;
+    width: 150px; 
+    height: 45px;
+    transition: .3s;
+    border: 1px solid blue; 
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: bold;
+    padding: 9px;
+    position: relative; 
+    cursor: pointer;
+    margin: 5px;
+}
+
+#editTeamSaveBtn {
+    position: relative;
+    margin-top: 15px;
+}
+
+.task-item {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f3f7fe;
+    color: #3b82f6;
+    border: none;
+    border-radius: 8px;
+    width: 150px; 
+    height: 45px;
+    transition: .3s;
+    border: 1px solid blue; 
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: bold;
+    padding: 9px;
+    position: relative; 
+    cursor: pointer;
+}
+
+.task-item:hover {
+    background-color: #3b82f6;
+    box-shadow: 0 0 0 5px #3b83f65f;
+    color: #fff;
+}
+
+#removeTeamList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.team-item {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f3f7fe;
+    color: #3b82f6;
+    border: none;
+    border-radius: 8px;
+    width: 150px; 
+    height: 45px;
+    transition: .3s;
+    border: 1px solid blue; 
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: bold;
+    padding: 9px;
+    position: relative; 
+    cursor: pointer; 
+}
+
+.team-item:hover {
+    background-color: #3b82f6;
+    box-shadow: 0 0 0 5px #3b83f65f;
+    color: #fff;
+}
+
+#showTeamList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 10px; 
+}
+
+#showTeamList li {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f3f7fe;
+    color: #3b82f6;
+    border: none;
+    border-radius: 8px;
+    width: 150px; 
+    height: 45px;
+    transition: .3s;
+    border: 1px solid blue; 
+    box-sizing: border-box;
+    text-align: center;
+    font-weight: bold;
+    padding: 9px;
+    position: relative; 
+    cursor: pointer;
+}
+
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#editTaskForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+}
+
+#editTaskForm input,
+#editTaskForm select,
+#editTaskForm textarea {
+    border: 2px solid transparent;
+    width: 15em;
+    height: 2.5em;
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    transition: all 0.5s;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    box-sizing: border-box; 
+}
+
+#editTaskForm textarea {
+    height: 5em; 
+    padding-top: 0.5em; 
+}
+
+#editTaskForm input:hover,
+#editTaskForm input:focus,
+#editTaskForm select:hover,
+#editTaskForm select:focus,
+#editTaskForm textarea:hover,
+#editTaskForm textarea:focus {
+    border: 2px solid #4A9DEC;
+    box-shadow: 0px 0px 0px 7px rgba(74, 157, 236, 0.2);
+    background-color: white;
+}
+
+#editTaskForm select {
+    width: 16.2em; 
+}
+
+#newTeamForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+}
+
+#newTeamForm input,
+#newTeamForm select,
+#newTeamForm textarea {
+    border: 2px solid transparent;
+    width: 15em;
+    height: 2.5em;
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    transition: all 0.5s;
+    margin-bottom: 10px;
+    margin-top: px;
+    box-sizing: border-box; 
+}
+
+#newTeamForm textarea {
+    height: 5em; 
+    padding-top: 0.5em; 
+}
+
+#newTeamForm input:hover,
+#newTeamForm input:focus,
+#newTeamForm select:hover,
+#newTeamForm select:focus {
+    border: 2px solid #4A9DEC;
+    box-shadow: 0px 0px 0px 7px rgba(74, 157, 236, 0.2);
+    background-color: white;
+}
+
+#newTeamForm select {
+    width: 16.2em;
+}
+
+#editTeamForm {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+}
+
+#editTeamForm input,
+#editTeamForm select,
+#editTeamForm textarea {
+    border: 2px solid transparent;
+    width: 15em;
+    height: 2.5em;
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    transition: all 0.5s;
+    margin-bottom: 10px;
+    margin-top: 5px;
+    box-sizing: border-box; 
+}
+
+#editTeamForm textarea {
+    height: 5em; 
+    padding-top: 0.5em; 
+}
+
+#editTeamForm input:hover,
+#editTeamForm input:focus,
+#editTeamForm select:hover,
+#editTeamForm select:focus,
+#editTeamForm textarea:hover,
+#editTeamForm textarea:focus {
+    border: 2px solid #4A9DEC;
+    box-shadow: 0px 0px 0px 7px rgba(74, 157, 236, 0.2);
+    background-color: white;
+}
+
+#editTeamForm select {
+    width: 16.2em; 
+}
+
+#teamTaskForm input {
+    border: 2px solid transparent;
+    width: 15em;
+    height: 2.5em;
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    transition: all 0.5s;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+#teamTaskForm input:hover,
+input:focus {
+    border: 2px solid #4A9DEC;
+    box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+    background-color: white;
+}
+
+#teamTaskForm select {
+    border: 2px solid transparent;
+    width: 16.2em;
+    height: 2.5em;
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    transition: all 0.5s;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+#teamTaskForm select:hover,
+select:focus {
+    border: 2px solid #4A9DEC;
+    box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+    background-color: white;
+}
+
+.loginBox {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+#loginBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+#inputDiv {
+    max-width: fit-content;
+    margin: auto;
+    height: auto;
+}
+
+#imgDiv {
+    display: block;
+    margin-bottom: 20px;
+}
+
+#logo {
+    height: auto; 
+    width: auto; 
+    max-width: 150px; 
+    max-height: 150px;
+}
+
+.input {
+    border: 2px solid transparent;
+    width: 100%;
+    height: 2.5em;
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    transition: all 0.5s;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.input:hover,
+.input:focus {
+    border: 2px solid #4A9DEC;
+    box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+    background-color: white;
+}
+
+#loginBtnPage {
+    display: block;
+    width: 100%;
+    height: 2.5em;
+    margin-left: 6px;
+    text-align: center;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#loginBtnPage:hover {
+    background-color: #2b6dc1;
+}
+
+.registerBox {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    width: 300px;
+    text-align: center;
+}
+
+#registerBody {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+#inputDivRegister {
+    max-width: fit-content;
+    margin: auto;
+    height: auto;
+}
+
+#imgDiv {
+    display: block;
+    margin-bottom: 20px;
+}
+
+#logo {
+    height: auto; 
+    width: auto; 
+    max-width: 150px; 
+    max-height: 150px;
+}
+
+.inputRegister {
+    border: 2px solid transparent;
+    width: 100%;
+    height: 2.5em;
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    transition: all 0.5s;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.inputRegister:hover,
+.inputRegister:focus {
+    border: 2px solid #4A9DEC;
+    box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
+    background-color: white;
+}
+
+#registerBtnPage {
+    display: block;
+    width: 100%;
+    height: 2.5em;
+    margin-left: 6px;
+    text-align: center;
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#registerBtnPage:hover {
+    background-color: #2b6dc1;
+}
+
+
+#orderListToDo {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    counter-reset: list-counter; 
+}
+
+
+#orderListToDo li {
+    position: relative;
+    margin: 10px 0; 
+    padding: 10px 10px 10px 40px; 
+    background-color: #f3f7fe;
+    color: #3b82f6;
+    border: 1px solid blue;
+    border-radius: 8px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#orderListToDo li::before {
+    content: counter(list-counter) ".";
+    counter-increment: list-counter;
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    font-weight: bold;
+    color: #3b82f6;
+}
+
+#orderListToDo li:hover {
+    background-color: #3b82f6;
+    color: #fff;
+}
+
+#orderListToDo li:hover::before {
+    color: #fff;
+}
+

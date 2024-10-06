@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<script src="script.js" async></script>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+<head>
+    <title>ezTask</title>
+</head>
+
+<body>
+
+    <div class="sideMenu">
+        <div class="dropdownLogin">
+            <button id="dropBtnLogin" > Account </button>
+            <div class="dropdown-content-login">
+                <a id="userStatus" ></a>
+                <a id="loginBtn" href="login.html">Login</a>
+                <a id="registerBtn" href="register.html">Register</a>
+                <a id="logoutBtn" href="#">Logout</a>
+            </div>
+        </div>
+
+        <div class="dropdownTask">
+            <button id="dropBtnTask" class="user-action" >Task</button>
+            <div class="dropdown-content">
+                <a href="#" id="newTask">New Task</a>
+                <a href="#" id="editTaskBtn">Edit Task</a>
+                <a href="#" id="removeTaskBtn">Remove Task</a>
+            </div>
+        </div>
+
+        <div class="dropdownTeam">
+            <button id="dropBtnTeam" class="user-action">Team</button>
+            <div class="dropdown-content">
+                <a href="#" id="newTeamBtn">New Team</a>
+                <a href="#" id="editTeamBtn">Edit Team</a>
+                <a href="#" id="removeTeamBtn">Remove Team</a>
+                <a href="#" id="newTeamTaskBtn">New Team Task</a>
+                <a href="#" id="editTeamTaskBtn">Edit Team Task</a>
+                <a href="#" id="removeTeamTaskBtn">Remove Team Task</a>
+            </div>
+        </div>
+
+        <div id="editTaskListModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Edit Task List</h2>
+                <div id="editTaskList"></div>
+            </div>
+        </div>
+
+        <div id="editTeamTaskListModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Edit Team Task List</h2>
+                <div id="editTeamTaskList"></div>
+            </div>
+        </div>
+
+        <div id="removeTaskModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Remove Task</h2>
+                <div id="removeTaskList"></div>
+            </div>
+        </div>
+
+        <div id="removeTeamTaskModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Remove Task</h2>
+                <div id="removeTeamTaskList"></div>
+            </div>
+        </div>
+
+        <button id="showTeamBtn" class="user-action">Teams</button>
+        <button id="ToDoBtn" class="user-action">To Do</button>
+        <button id="backToUserTasksBtn">Back to My Tasks</button>
+
+        <div id="ToDoModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>To Do List</h2>
+                <ol id="orderListToDo"></ol>
+            </div>
+        </div>
+
+        <div id="showTeamModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Teams</h2>
+                <ol id="showTeamList"></ol>
+            </div>
+        </div>
+    </div>
+    <div id="task-container"></div>
+
+    <div id="taskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create New Task</h2>
+            <form id="taskForm">
+                <label for="title">Title:</label><br>
+                <input type="text" id="title" name="title" required><br>
+                <label for="description">Description:</label><br>
+                <input type="text" id="description" name="description" required><br>
+                <label for="priority">Priority:</label><br>
+                <select name="priority" required>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select><br>
+                <label for="date">Date:</label><br>
+                <input type="date" id="date" name="date" required><br>
+                <label for="type">Type:</label><br>
+                <input type="text" id="type" name="type" required><br><br>
+                <button type="submit">Create Task</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="teamTaskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create New Team Task</h2>
+            <form id="teamTaskForm">
+                <label for="teamTaskTitle">Title:</label><br>
+                <input type="text" id="teamTaskTitle" name="title" required><br>
+                <label for="teamTaskDescription">Description:</label><br>
+                <input type="text" id="teamTaskDescription" name="description" required><br>
+                <label for="teamTaskPriority">Priority:</label><br>
+                <select id="teamTaskPriority" name="priority" required>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select><br>
+                <label for="teamTaskDate">Date:</label><br>
+                <input type="date" id="teamTaskDate" name="date" required><br>
+                <label for="teamTaskType">Type:</label><br>
+                <input type="text" id="teamTaskType" name="type" required><br><br>
+                <button type="submit">Create Team Task</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="editTaskModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Task</h2>
+            <form id="editTaskForm">
+                <input type="hidden" id="editTaskId" name="id" required>
+                <label for="editTitle">Title:</label>
+                <input type="text" id="editTitle" name="title" required>
+                <label for="editDescription">Description:</label>
+                <textarea id="editDescription" name="description" required></textarea>
+                <label for="editPriority">Priority:</label>
+                <select name="priority" required>
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                </select>
+                <label for="editDate">Date:</label>
+                <input type="date" id="editDate" name="date" required>
+                <label for="editType">Type:</label>
+                <input type="text" id="editType" name="type" required>
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="newTeamModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Create New Team</h2>
+            <form id="newTeamForm">
+                <label for="teamName">Team Name:</label><br>
+                <input type="text" id="teamName" name="teamName" required><br>
+                <label for="teamMembers">Team Members (comma separated user IDs):</label><br>
+                <input type="text" id="teamMembers" name="teamMembers" placeholder="User Id" required><br>
+                <label for="teamMembersRoles">Team Members Roles (comma separated roles):</label><br>
+                <input type="text" id="teamMembersRoles" name="teamMembersRoles" placeholder="Role" required><br><br>
+                <button type="submit">Create Team</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="removeTeamModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Remove Team</h2>
+            <div id="removeTeamList"></div>
+        </div>
+    </div>
+
+    <div id="editTeamListModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Select a Team to Edit</h2>
+            <div id="editTeamList"></div>
+        </div>
+    </div>
+
+    <div id="editTeamModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Team</h2>
+            <form id="editTeamForm">
+                <label for="editTeamName" id="editTeamLabel">Team Name:</label>
+                <input type="text" id="editTeamName" name="teamName" required>
+                <h3>Remove Team Members</h3>
+                <div id="teamMembersList"></div>
+                <button type="submit" id="editTeamSaveBtn">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+   
+</body>
+
+</html>
